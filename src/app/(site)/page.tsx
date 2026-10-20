@@ -3,7 +3,6 @@ import { aparelhos } from "@/lib/aparelhos";
 import { enderecoCompleto, linkWhatsApp, loja, mapaEmbed, mapaLink } from "@/lib/loja";
 import { CartaoAparelho } from "@/components/CartaoAparelho";
 import { Celular } from "@/components/Celular";
-import { Duelos } from "@/components/Duelos";
 import { Letreiro } from "@/components/Letreiro";
 import { TituloDigitado } from "@/components/TituloDigitado";
 import { VitrineHero } from "@/components/VitrineHero";
@@ -81,8 +80,6 @@ export default function Inicio() {
           ))}
         </div>
       </section>
-
-      <Duelos />
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
         <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-preto px-6 py-10 text-white sm:px-10 md:grid-cols-[1.3fr_1fr]">

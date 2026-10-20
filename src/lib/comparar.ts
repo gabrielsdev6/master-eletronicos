@@ -1,4 +1,4 @@
-import { aparelhos, formatarArmazenamento, formatarPreco, type Aparelho } from "./aparelhos";
+import { formatarArmazenamento, formatarPreco, type Aparelho } from "./aparelhos";
 import { ESPECIFICACOES } from "./especificacoes";
 
 export function nomeCurto(a: Aparelho) {
@@ -18,19 +18,4 @@ export function resumoComparacao(a: Aparelho, b: Aparelho) {
     if (horas < 0) frase += `, mas dura ${-horas}h a menos em vídeo`;
   }
   return `${frase}.`;
-}
-
-// Dúvidas comuns de quem vai comprar. Só aparecem se os dois modelos tiverem estoque.
-const DUELOS: [string, string][] = [
-  ["iPhone 15", "iPhone 16"],
-  ["iPhone 16", "iPhone 17"],
-  ["iPhone 13", "iPhone 14"],
-];
-
-export function duelosProntos() {
-  const primeiroDisponivel = (modelo: string) =>
-    aparelhos.find((a) => a.modelo === modelo && a.quantidade > 0);
-  return DUELOS.map(([x, y]) => [primeiroDisponivel(x), primeiroDisponivel(y)] as const).filter(
-    (par): par is readonly [Aparelho, Aparelho] => Boolean(par[0] && par[1]),
-  );
 }
