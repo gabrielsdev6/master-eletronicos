@@ -2,31 +2,27 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
-  aparelhos,
-  buscarAparelho,
   formatarArmazenamento,
   nomeCompleto,
 } from "@/lib/aparelhos";
+import { buscarAparelho, listarAparelhos } from "@/lib/estoque";
 import { CelularGiratorio } from "@/components/CelularGiratorio";
+import { GaleriaFotos } from "@/components/GaleriaFotos";
 import { CartaoAparelho, Etiqueta } from "@/components/CartaoAparelho";
 import { Compra } from "@/components/Compra";
 
-export function generateStaticParams() {
-  return aparelhos.map((a) => ({ id: a.id }));
-}
-
 export async function generateMetadata({ params }: PageProps<"/iphones/[id]">): Promise<Metadata> {
-  const aparelho = buscarAparelho((await params).id);
+  const aparelho = await buscarAparelho((await params).id);
   return { title: aparelho ? nomeCompleto(aparelho) : "Aparelho não encontrado" };
 }
 
 export default async function PaginaAparelho({ params }: PageProps<"/iphones/[id]">) {
-  const aparelho = buscarAparelho((await params).id);
+  const aparelho = await buscarAparelho((await params).id);
   if (!aparelho) notFound();
 
   const esgotado = aparelho.quantidade === 0;
 
-  const parecidos = aparelhos
+  const parecidos = (await listarAparelhos())
     .filter((a) => a.id !== aparelho.id && a.modelo === aparelho.modelo && a.quantidade > 0)
     .slice(0, 4);
 
@@ -46,7 +42,11 @@ export default async function PaginaAparelho({ params }: PageProps<"/iphones/[id
       </Link>
 
       <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <CelularGiratorio modelo={aparelho.modelo} corHex={aparelho.corHex} esgotado={esgotado} />
+        {aparelho.fotos.length > 0 ? (
+          <GaleriaFotos fotos={aparelho.fotos} nome={nomeCompleto(aparelho)} esgotado={esgotado} />
+        ) : (
+          <CelularGiratorio modelo={aparelho.modelo} corHex={aparelho.corHex} esgotado={esgotado} />
+        )}
 
         <div>
           <h1 className="letreiro text-4xl sm:text-5xl">{aparelho.modelo}</h1>

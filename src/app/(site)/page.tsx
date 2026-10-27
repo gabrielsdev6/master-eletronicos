@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { aparelhos } from "@/lib/aparelhos";
+import { listarAparelhos } from "@/lib/estoque";
 import { enderecoCompleto, linkWhatsApp, loja, mapaEmbed, mapaLink } from "@/lib/loja";
 import { CartaoAparelho } from "@/components/CartaoAparelho";
 import { Celular } from "@/components/Celular";
@@ -23,7 +23,8 @@ const passos = [
   },
 ];
 
-export default function Inicio() {
+export default async function Inicio() {
+  const aparelhos = await listarAparelhos();
   const destaques = aparelhos.filter((a) => a.destaque && a.quantidade > 0);
   const vitrine = destaques.slice(0, 3);
 
@@ -60,12 +61,12 @@ export default function Inicio() {
             </div>
           </div>
 
-          {/* Vitrine: os aparelhos saem pela base da faixa amarela, como numa prateleira */}
+          {/* Vitrine: os aparelhos saem pela base da faixa azul, como numa prateleira */}
           <VitrineHero vitrine={vitrine} />
         </div>
       </section>
 
-      <Letreiro />
+      <Letreiro aparelhos={aparelhos} />
 
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">

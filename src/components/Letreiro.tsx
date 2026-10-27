@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { aparelhos, formatarPreco, listarModelos } from "@/lib/aparelhos";
+import { formatarPreco, listarModelos, type Aparelho } from "@/lib/aparelhos";
 
 // Faixa de LED da fachada: modelos com estoque e o menor preço de cada um
-export function Letreiro() {
-  const itens = listarModelos()
+export function Letreiro({ aparelhos }: { aparelhos: Aparelho[] }) {
+  const itens = listarModelos(aparelhos)
     .map((modelo) => {
       const disponiveis = aparelhos.filter((a) => a.modelo === modelo && a.quantidade > 0);
       if (disponiveis.length === 0) return null;

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { aparelhos, listarArmazenamentos, listarModelos } from "@/lib/aparelhos";
+import { listarArmazenamentos, listarModelos } from "@/lib/aparelhos";
+import { listarAparelhos } from "@/lib/estoque";
 import { Catalogo } from "./Catalogo";
 
 export const metadata: Metadata = { title: "iPhones" };
@@ -11,6 +12,7 @@ function texto(v: string | string[] | undefined) {
 
 export default async function PaginaCatalogo({ searchParams }: PageProps<"/iphones">) {
   const sp = await searchParams;
+  const aparelhos = await listarAparelhos();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
@@ -22,8 +24,8 @@ export default async function PaginaCatalogo({ searchParams }: PageProps<"/iphon
       </div>
       <Catalogo
         aparelhos={aparelhos}
-        modelos={listarModelos()}
-        armazenamentos={listarArmazenamentos()}
+        modelos={listarModelos(aparelhos)}
+        armazenamentos={listarArmazenamentos(aparelhos)}
         inicial={{ modelo: texto(sp.modelo), gb: texto(sp.gb), estado: texto(sp.estado) }}
       />
     </div>

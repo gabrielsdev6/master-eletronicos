@@ -483,3 +483,37 @@ body {
     }
   }
 }
+
+/* Janela de venda/entrada do painel: entra subindo um pouco, fundo escurece junto */
+.dialogo[open] {
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out);
+  @starting-style {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+}
+.dialogo[open]::backdrop {
+  transition: opacity 200ms ease;
+  @starting-style {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dialogo[open] {
+    @starting-style {
+      transform: none;
+    }
+  }
+}
+
+/* Foto real no cartão do catálogo levanta um pouco, como o desenho */
+.cartao .foto-aparelho {
+  transition: transform 250ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .cartao:hover .foto-aparelho {
+    transform: translateY(-6px);
+  }
+}
