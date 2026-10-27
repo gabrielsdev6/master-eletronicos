@@ -95,7 +95,7 @@ export function Comparador({ opcoes, inicial }: { opcoes: Aparelho[]; inicial: [
               <select
                 value={a.id}
                 onChange={(e) => trocar(lado as 0 | 1, e.target.value)}
-                className="w-full truncate rounded-lg border border-linha bg-papel px-2 py-3 text-sm font-semibold focus:border-preto focus:outline-none sm:px-3 sm:text-base"
+                className="w-full truncate rounded-lg border border-linha bg-papel px-2 py-3 text-sm font-semibold focus:border-marinho focus:outline-none sm:px-3 sm:text-base"
               >
                 {opcoes
                   .filter((o) => o.id === a.id || o.id !== ids[lado === 0 ? 1 : 0])
@@ -141,7 +141,7 @@ export function Comparador({ opcoes, inicial }: { opcoes: Aparelho[]; inicial: [
         })}
       </dl>
       <p className="mt-4 text-sm text-cinza">
-        Em amarelo, quem leva vantagem em cada item. Ficha técnica de referência da Apple.
+        Em destaque, quem leva vantagem em cada item. Ficha técnica de referência da Apple.
       </p>
     </>
   );

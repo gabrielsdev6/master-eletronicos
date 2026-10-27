@@ -28,7 +28,7 @@ export function Escolha<T extends string>({
               onChange={() => onChange(o.valor)}
               className="peer sr-only"
             />
-            <span className="pressiona block rounded-full border border-linha bg-papel px-4 py-2 text-sm font-semibold peer-checked:border-preto peer-checked:bg-preto peer-checked:text-amarelo peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-preto hover:border-preto">
+            <span className="pressiona block rounded-full border border-linha bg-papel px-4 py-2 text-sm font-semibold peer-checked:border-cobalto peer-checked:bg-cobalto peer-checked:text-white peer-focus-visible:outline-3 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-marinho hover:border-marinho">
               {o.rotulo}
             </span>
           </label>

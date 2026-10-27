@@ -29,12 +29,12 @@ export default function Inicio() {
 
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-amarelo">
+      <section className="relative isolate overflow-hidden bg-cobalto text-white">
         <div className="bolinhas" aria-hidden />
         <div className="mx-auto grid max-w-6xl gap-10 px-4 pt-12 md:grid-cols-[1.05fr_1fr] md:pt-16">
           <div className="self-center md:pb-16">
             <TituloDigitado
-              texto="iPhone novo e seminovo, aqui em Pimenta."
+              texto="iPhone novo e seminovo, com preço na vitrine."
               className="letreiro text-5xl sm:text-6xl lg:text-7xl"
             />
             <p className="mt-6 max-w-md text-lg">
@@ -44,7 +44,7 @@ export default function Inicio() {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href="/iphones"
-                className="pressiona rounded-full bg-preto px-6 py-3.5 font-semibold text-amarelo hover:bg-preto/85"
+                className="pressiona rounded-full bg-white px-6 py-3.5 font-semibold text-cobalto hover:bg-gelo"
               >
                 Ver iPhones
               </Link>
@@ -52,7 +52,7 @@ export default function Inicio() {
                 href={linkWhatsApp("Olá! Vim pelo site e queria saber dos iPhones.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 pressiona rounded-full border-2 border-preto px-6 py-3 font-semibold hover:bg-preto hover:text-amarelo"
+                className="flex items-center gap-2 pressiona rounded-full border-2 border-white/80 px-6 py-3 font-semibold hover:bg-white hover:text-cobalto"
               >
                 <IconeConversa />
                 Chamar no WhatsApp
@@ -82,16 +82,16 @@ export default function Inicio() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-16">
-        <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-preto px-6 py-10 text-white sm:px-10 md:grid-cols-[1.3fr_1fr]">
+        <div className="grid items-center gap-8 overflow-hidden rounded-3xl bg-marinho px-6 py-10 text-white sm:px-10 md:grid-cols-[1.3fr_1fr]">
           <div>
-            <h2 className="letreiro text-3xl text-amarelo sm:text-4xl">Seu iPhone usado vale desconto</h2>
+            <h2 className="letreiro text-3xl text-coral sm:text-4xl">Seu iPhone usado vale desconto</h2>
             <p className="mt-4 max-w-md text-white/80">
               Responda umas perguntas sobre o seu aparelho e veja na hora quanto ele vale na troca por
               um iPhone da loja.
             </p>
             <Link
               href="/troca"
-              className="pressiona mt-6 inline-flex rounded-full bg-amarelo px-6 py-3.5 font-semibold text-preto hover:bg-amarelo-escuro"
+              className="pressiona mt-6 inline-flex rounded-full bg-coral px-6 py-3.5 font-semibold text-marinho hover:bg-coral-escuro"
             >
               Avaliar meu iPhone
             </Link>
@@ -109,7 +109,7 @@ export default function Inicio() {
           <ol className="grid gap-8 sm:grid-cols-3">
             {passos.map((p, i) => (
               <li key={p.titulo} className="flex gap-4">
-                <span className="letreiro flex size-12 shrink-0 items-center justify-center rounded-full bg-amarelo text-2xl">
+                <span className="letreiro flex size-12 shrink-0 items-center justify-center rounded-full bg-coral text-2xl">
                   {i + 1}
                 </span>
                 <div>
@@ -145,7 +145,7 @@ export default function Inicio() {
             href={mapaLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-flex pressiona rounded-full bg-preto px-6 py-3.5 font-semibold text-amarelo hover:bg-preto/85"
+            className="mt-8 inline-flex pressiona rounded-full bg-cobalto px-6 py-3.5 font-semibold text-white hover:bg-cobalto-escuro"
           >
             Abrir no Google Maps
           </a>

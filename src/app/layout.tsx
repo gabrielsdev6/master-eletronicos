@@ -10,16 +10,16 @@ const archivo = Archivo({
 
 export const metadata: Metadata = {
   title: {
-    default: "Master Eletrônicos | iPhone em Pimenta - MG",
-    template: "%s | Master Eletrônicos",
+    default: "Órbita Celulares | iPhone novo e seminovo",
+    template: "%s | Órbita Celulares",
   },
   description:
-    "iPhone novo e seminovo em Pimenta - MG. Veja os modelos, preços e fale com a loja pelo WhatsApp.",
+    "iPhone novo e seminovo. Veja os modelos, preços e fale com a loja pelo WhatsApp.",
   robots: { index: false, follow: false },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#0d1330",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

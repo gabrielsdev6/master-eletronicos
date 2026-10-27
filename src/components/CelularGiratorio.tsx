@@ -72,7 +72,7 @@ export function CelularGiratorio({
             <div className="tela-frente" style={{ "--corpo": corHex } as React.CSSProperties}>
               <span className="ilha" />
               <span className="hora">10:00</span>
-              <span className="letreiro marca-tela">Master</span>
+              <span className="letreiro marca-tela">Órbita</span>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export function CelularGiratorio({
       <button
         type="button"
         onClick={() => setFrente((v) => !v)}
-        className="pressiona absolute bottom-4 rounded-full bg-papel px-4 py-2 text-sm font-semibold ring-1 ring-linha hover:ring-preto"
+        className="pressiona absolute bottom-4 rounded-full bg-papel px-4 py-2 text-sm font-semibold ring-1 ring-linha hover:ring-marinho"
       >
         {frente ? "Ver a traseira" : "Ver a frente"}
       </button>

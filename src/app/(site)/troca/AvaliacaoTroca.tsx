@@ -93,7 +93,7 @@ export function AvaliacaoTroca({
           <select
             value={modelo}
             onChange={(e) => setModelo(e.target.value)}
-            className="w-full rounded-lg border border-linha bg-papel px-3 py-3 focus:border-preto focus:outline-none"
+            className="w-full rounded-lg border border-linha bg-papel px-3 py-3 focus:border-marinho focus:outline-none"
           >
             <option value="">Escolha o modelo</option>
             {MODELOS_TROCA.map((m) => (
@@ -131,7 +131,7 @@ export function AvaliacaoTroca({
           <select
             value={por}
             onChange={(e) => setPor(e.target.value)}
-            className="w-full rounded-lg border border-linha bg-papel px-3 py-3 focus:border-preto focus:outline-none"
+            className="w-full rounded-lg border border-linha bg-papel px-3 py-3 focus:border-marinho focus:outline-none"
           >
             <option value="">Ainda não sei</option>
             {disponiveis.map((a) => (
@@ -145,7 +145,7 @@ export function AvaliacaoTroca({
 
       <aside className="md:sticky md:top-6" aria-live="polite">
         {estimativa ? (
-          <div key="pronto" className="aparece rounded-2xl bg-amarelo p-5">
+          <div key="pronto" className="aparece rounded-2xl bg-cobalto p-5 text-white">
             <p className="text-sm font-semibold">Seu {modelo} vale em torno de</p>
             <p className="letreiro mt-2 text-3xl leading-tight">
               {formatarPreco(estimativa.minimo)}
@@ -153,7 +153,7 @@ export function AvaliacaoTroca({
             </p>
 
             {diferenca && desejado && (
-              <div className="mt-4 border-t border-preto/20 pt-4">
+              <div className="mt-4 border-t border-white/25 pt-4">
                 <p className="text-sm">Pelo {desejado.modelo}, você paga a diferença de</p>
                 <p className="mt-1 text-xl font-bold">
                   {formatarPreco(diferenca.minima)} a {formatarPreco(diferenca.maxima)}
@@ -165,7 +165,7 @@ export function AvaliacaoTroca({
               href={linkWhatsApp(mensagem)}
               target="_blank"
               rel="noopener noreferrer"
-              className="pressiona mt-5 flex items-center justify-center gap-2 rounded-full bg-preto px-5 py-3.5 font-semibold text-amarelo hover:bg-preto/85"
+              className="pressiona mt-5 flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 font-semibold text-cobalto hover:bg-gelo"
             >
               <IconeConversa />
               Enviar avaliação
@@ -182,7 +182,7 @@ export function AvaliacaoTroca({
             <p className="mt-1 text-sm text-cinza">Quando terminar, a estimativa aparece aqui.</p>
             <div className="mt-4 h-2 overflow-hidden rounded-full bg-nevoa">
               <div
-                className="barra-progresso h-full rounded-full bg-preto"
+                className="barra-progresso h-full rounded-full bg-marinho"
                 style={{ transform: `scaleX(${(6 - faltam) / 6})` }}
               />
             </div>

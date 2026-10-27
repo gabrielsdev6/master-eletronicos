@@ -90,7 +90,7 @@ export function Compra({ aparelho }: { aparelho: Aparelho }) {
 
       <Link
         href={`/troca?por=${aparelho.id}`}
-        className="pressiona mt-6 flex items-center justify-between gap-4 rounded-2xl border-2 border-preto px-5 py-4 hover:bg-amarelo"
+        className="pressiona mt-6 flex items-center justify-between gap-4 rounded-2xl border-2 border-marinho px-5 py-4 hover:bg-gelo"
       >
         <span>
           <span className="block font-bold">Tem um iPhone pra dar na troca?</span>
@@ -108,7 +108,7 @@ function BotaoWhatsApp({ texto, mensagem }: { texto: string; mensagem: string })
       href={linkWhatsApp(mensagem)}
       target="_blank"
       rel="noopener noreferrer"
-      className="pressiona mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-preto px-6 py-4 text-lg font-semibold text-amarelo hover:bg-preto/85"
+      className="pressiona mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-cobalto px-6 py-4 text-lg font-semibold text-white hover:bg-cobalto-escuro"
     >
       <IconeConversa />
       {texto}

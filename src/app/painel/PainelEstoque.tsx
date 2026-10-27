@@ -59,23 +59,23 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
     setAviso(`${aparelho.modelo} cadastrado.`);
   }
 
-  const campo = "w-full rounded-lg border border-linha bg-papel px-3 py-2.5 focus:border-preto focus:outline-none";
+  const campo = "w-full rounded-lg border border-linha bg-papel px-3 py-2.5 focus:border-marinho focus:outline-none";
 
   return (
     <div className="min-h-full bg-nevoa">
-      <header className="bg-preto text-white">
+      <header className="bg-marinho text-white">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
           <div className="flex items-center gap-3">
             <Marca />
             <span className="rounded bg-white/10 px-2 py-0.5 text-xs">Painel</span>
           </div>
-          <Link href="/" className="text-sm font-semibold hover:text-amarelo">
+          <Link href="/" className="text-sm font-semibold hover:text-coral">
             Ver o site
           </Link>
         </div>
       </header>
 
-      <div className="bg-amarelo">
+      <div className="bg-coral">
         <p className="mx-auto max-w-6xl px-4 py-2.5 text-sm font-medium">
           Isto é uma demonstração: as mudanças ficam só nesta tela. No site final, o que vocês mudarem
           aqui aparece na hora para os clientes.
@@ -95,7 +95,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
             type="button"
             onClick={() => setCadastrando((v) => !v)}
             aria-expanded={cadastrando}
-            className="pressiona rounded-full bg-preto px-5 py-3 font-semibold text-amarelo hover:bg-preto/85"
+            className="pressiona rounded-full bg-cobalto px-5 py-3 font-semibold text-white hover:bg-cobalto-escuro"
           >
             {cadastrando ? "Fechar cadastro" : "Cadastrar aparelho"}
           </button>
@@ -149,7 +149,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
               </label>
             </div>
             <div className="sm:col-span-3">
-              <button type="submit" className="pressiona rounded-full bg-amarelo px-5 py-3 font-semibold hover:bg-amarelo-escuro">
+              <button type="submit" className="pressiona rounded-full bg-coral px-5 py-3 font-semibold hover:bg-coral-escuro">
                 Salvar aparelho
               </button>
             </div>
@@ -188,7 +188,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
                   value={a.preco}
                   onChange={(e) => alterar(a.id, { preco: Number(e.target.value) })}
                   aria-label={`Preço do ${a.modelo} ${a.cor}`}
-                  className="w-28 rounded-lg border border-linha px-3 py-2 font-semibold tabular-nums focus:border-preto focus:outline-none"
+                  className="w-28 rounded-lg border border-linha px-3 py-2 font-semibold tabular-nums focus:border-marinho focus:outline-none"
                 />
               </label>
 
@@ -199,7 +199,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
                   onClick={() => alterar(a.id, { quantidade: Math.max(0, a.quantidade - 1) })}
                   disabled={a.quantidade === 0}
                   aria-label={`Tirar uma unidade do ${a.modelo} ${a.cor}`}
-                  className="pressiona size-10 rounded-lg border border-linha text-xl font-bold hover:border-preto disabled:opacity-30"
+                  className="pressiona size-10 rounded-lg border border-linha text-xl font-bold hover:border-marinho disabled:opacity-30"
                 >
                   −
                 </button>
@@ -210,7 +210,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
                   type="button"
                   onClick={() => alterar(a.id, { quantidade: a.quantidade + 1 })}
                   aria-label={`Adicionar uma unidade do ${a.modelo} ${a.cor}`}
-                  className="pressiona size-10 rounded-lg border border-linha text-xl font-bold hover:border-preto"
+                  className="pressiona size-10 rounded-lg border border-linha text-xl font-bold hover:border-marinho"
                 >
                   +
                 </button>
@@ -229,7 +229,7 @@ export function PainelEstoque({ iniciais }: { iniciais: Aparelho[] }) {
                     type="checkbox"
                     checked={a.destaque}
                     onChange={(e) => alterar(a.id, { destaque: e.target.checked })}
-                    className="size-4 accent-black"
+                    className="size-4 accent-[#2B4BF2]"
                   />
                   Destaque
                 </label>

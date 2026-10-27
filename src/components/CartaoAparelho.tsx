@@ -36,7 +36,7 @@ export function CartaoAparelho({ aparelho }: { aparelho: Aparelho }) {
         />
         <span
           className={`absolute left-3 top-3 rounded-full px-2.5 py-1 text-xs font-semibold ${
-            aparelho.estado === "novo" ? "bg-preto text-amarelo" : "bg-papel text-preto ring-1 ring-linha"
+            aparelho.estado === "novo" ? "bg-cobalto text-white" : "bg-papel text-marinho ring-1 ring-linha"
           }`}
         >
           {aparelho.estado === "novo" ? "Novo" : "Seminovo"}

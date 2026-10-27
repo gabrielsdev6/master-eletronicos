@@ -1,10 +1,10 @@
 export const loja = {
-  nome: "Master Eletrônicos",
+  nome: "Órbita Celulares",
   // Número de exemplo: trocar pelo WhatsApp real da loja (só dígitos, com 55 e DDD)
   whatsapp: "5537900000000",
-  endereco: "Avenida JK, 341",
-  cidade: "Pimenta - MG",
-  cep: "35585-000",
+  endereco: "Rua das Palmeiras, 120",
+  cidade: "Centro, Belo Horizonte - MG",
+  cep: "30110-000",
   horario: [
     { dias: "Segunda a sexta", horas: "8h às 18h" },
     { dias: "Sábado", horas: "8h às 12h" },

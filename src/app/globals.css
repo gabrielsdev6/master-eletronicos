@@ -1,13 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-amarelo: #ffd200;
-  --color-amarelo-escuro: #e6bd00;
-  --color-preto: #000000;
+  --color-cobalto: #2b4bf2;
+  --color-cobalto-escuro: #1f3ad1;
+  --color-coral: #ff6b4a;
+  --color-coral-escuro: #f2522f;
+  --color-marinho: #0d1330;
   --color-papel: #ffffff;
-  --color-nevoa: #f2f2f0;
-  --color-linha: #e2e2de;
-  --color-cinza: #5f5f5a;
+  --color-gelo: #eef1ff;
+  --color-nevoa: #eef1ff;
+  --color-linha: #dde1f0;
+  --color-cinza: #565d78;
   --color-alerta: #c4281c;
   --color-ok: #1f7a3a;
   --font-sans: var(--font-archivo);
@@ -81,7 +84,7 @@ html {
 
 body {
   background: var(--color-papel);
-  color: var(--color-preto);
+  color: var(--color-marinho);
   font-family: var(--font-archivo), system-ui, sans-serif;
 }
 
@@ -94,12 +97,15 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-preto);
+  outline: 3px solid var(--color-marinho);
   outline-offset: 2px;
 }
 
-.bg-preto :focus-visible {
-  outline-color: var(--color-amarelo);
+.bg-marinho :focus-visible {
+  outline-color: var(--color-coral);
+}
+.bg-cobalto :focus-visible {
+  outline-color: var(--color-papel);
 }
 
 /* Etiqueta de preço, como as de prateleira */
@@ -109,8 +115,8 @@ body {
   display: inline-flex;
   align-items: baseline;
   gap: 0.35em;
-  background: var(--color-amarelo);
-  color: var(--color-preto);
+  background: var(--color-coral);
+  color: var(--color-marinho);
   padding: 0.35em 0.8em 0.35em 1.5em;
   clip-path: polygon(0.75em 0, 100% 0, 100% 100%, 0.75em 100%, 0 50%);
   font-variant-numeric: tabular-nums;
@@ -231,13 +237,13 @@ body {
   transform: rotate(var(--giro, 0deg));
 }
 
-/* Etiqueta branca, para usar sobre o amarelo */
+/* Etiqueta branca, para usar sobre o azul do topo */
 .etiqueta.clara {
   background: var(--color-papel);
   padding-block: 0.5em;
 }
 .etiqueta.clara::before {
-  background: var(--color-amarelo);
+  background: var(--color-cobalto);
 }
 
 /* Letreiro de LED: os modelos passam devagar, para quando o mouse está em cima */
@@ -323,8 +329,8 @@ body {
   inset: 3.2%;
   border-radius: 14% / 6.8%;
   background:
-    radial-gradient(120% 70% at 20% 100%, var(--color-preto) 0 30%, transparent 31%),
-    linear-gradient(160deg, #ffe35c, var(--color-amarelo) 55%, var(--color-amarelo-escuro));
+    radial-gradient(120% 70% at 20% 100%, var(--color-coral) 0 30%, transparent 31%),
+    linear-gradient(160deg, #6d84ff, var(--color-cobalto) 55%, var(--color-cobalto-escuro));
 }
 .tela-frente .ilha {
   position: absolute;
@@ -345,7 +351,7 @@ body {
   text-align: center;
   font-size: clamp(1.1rem, 3.4vw, 2.2rem);
   font-weight: 700;
-  color: var(--color-preto);
+  color: var(--color-papel);
   font-variant-numeric: tabular-nums;
 }
 .tela-frente .marca-tela {
@@ -354,7 +360,7 @@ body {
   bottom: 9%;
   left: 12%;
   font-size: clamp(0.7rem, 1.6vw, 1rem);
-  color: var(--color-amarelo);
+  color: var(--color-papel);
 }
 
 /* Filtro do catálogo: cartões deslizam para o novo lugar */
@@ -373,7 +379,7 @@ body {
   inset: -16px;
   z-index: -1;
   pointer-events: none;
-  background-image: radial-gradient(circle, rgb(0 0 0 / 0.22) 2px, transparent 2.6px);
+  background-image: radial-gradient(circle, rgb(255 255 255 / 0.2) 2px, transparent 2.6px);
   background-size: 22px 22px;
   mask-image: radial-gradient(ellipse 70% 90% at 78% 70%, black 20%, transparent 75%);
   transition: transform 900ms var(--ease-out);
@@ -391,7 +397,7 @@ body {
   height: 0.82em;
   margin-right: -0.08em;
   vertical-align: -0.04em;
-  background: var(--color-preto);
+  background: currentColor;
 }
 @media (prefers-reduced-motion: no-preference) {
   .cursor-digitacao.piscando {
@@ -430,16 +436,16 @@ body {
   height: 26px;
   margin-top: -10px;
   border-radius: 50%;
-  background: var(--color-amarelo);
-  border: 3px solid var(--color-preto);
+  background: var(--color-coral);
+  border: 3px solid var(--color-marinho);
   transition: transform 160ms var(--ease-out);
 }
 .regua::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--color-amarelo);
-  border: 3px solid var(--color-preto);
+  background: var(--color-coral);
+  border: 3px solid var(--color-marinho);
 }
 .regua:active::-webkit-slider-thumb {
   transform: scale(1.12);
@@ -453,7 +459,7 @@ body {
 
 /* Comparar: marca quem leva vantagem na linha */
 .vantagem {
-  background: var(--color-amarelo);
+  background: color-mix(in srgb, var(--color-coral) 35%, white);
   padding: 0.1em 0.45em;
   margin-left: -0.45em;
   border-radius: 0.35em;

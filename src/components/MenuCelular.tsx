@@ -31,7 +31,7 @@ export function MenuCelular({ links }: { links: { href: string; rotulo: string }
         aria-expanded={aberto}
         aria-controls="menu-celular"
         aria-label={aberto ? "Fechar menu" : "Abrir menu"}
-        className="pressiona flex size-10 items-center justify-center rounded-full ring-1 ring-white/25 hover:ring-amarelo md:hidden"
+        className="pressiona flex size-10 items-center justify-center rounded-full ring-1 ring-white/25 hover:ring-coral md:hidden"
       >
         <svg viewBox="0 0 24 24" className="size-5" aria-hidden>
           <path
@@ -47,7 +47,7 @@ export function MenuCelular({ links }: { links: { href: string; rotulo: string }
         <nav
           id="menu-celular"
           aria-label="Menu"
-          className="menu-celular absolute inset-x-0 top-16 z-50 border-t border-white/10 bg-preto px-4 pb-6 pt-2 md:hidden"
+          className="menu-celular absolute inset-x-0 top-16 z-50 border-t border-white/10 bg-marinho px-4 pb-6 pt-2 md:hidden"
         >
           <ul>
             {links.map((l) => (
@@ -56,7 +56,7 @@ export function MenuCelular({ links }: { links: { href: string; rotulo: string }
                   href={l.href}
                   onClick={() => setAberto(false)}
                   aria-current={caminho === l.href ? "page" : undefined}
-                  className="letreiro block py-4 text-2xl hover:text-amarelo aria-[current=page]:text-amarelo"
+                  className="letreiro block py-4 text-2xl hover:text-coral aria-[current=page]:text-coral"
                 >
                   {l.rotulo}
                 </Link>

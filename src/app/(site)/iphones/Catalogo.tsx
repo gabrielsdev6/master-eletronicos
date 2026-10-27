@@ -31,7 +31,7 @@ function Opcao({
       onClick={onClick}
       aria-pressed={ativo}
       className={`pressiona shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold ${
-        ativo ? "border-preto bg-preto text-amarelo" : "border-linha bg-papel hover:border-preto"
+        ativo ? "border-cobalto bg-cobalto text-white" : "border-linha bg-papel hover:border-marinho"
       }`}
     >
       {children}
@@ -122,7 +122,7 @@ export function Catalogo({
             <button
               type="button"
               onClick={() => mudar({ modelo: undefined, gb: undefined, estado: undefined })}
-              className="font-semibold text-preto underline underline-offset-4"
+              className="font-semibold text-marinho underline underline-offset-4"
             >
               Limpar filtros
             </button>
